@@ -28,7 +28,7 @@ typedef vector<int> vi;
 typedef vector<vi> vvi;
 typedef pair<int, int> ii;
 
-bool check_substring(int k, string str1, string str2){
+bool check_substring(int k, string &str1, string &str2){
     
     for(int i=0;i<str1.size();i++){
         if(i+k>str1.size()){
@@ -40,7 +40,7 @@ bool check_substring(int k, string str1, string str2){
             }
             int ret = true;
             for(int temp=0;temp<k;temp++){
-                if(str1[i+k]!=str2[j+k]){
+                if(str1[i+temp]!=str2[j+temp]){
                     ret = false;
                     break;
                 }
