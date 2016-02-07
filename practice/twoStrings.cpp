@@ -30,22 +30,26 @@ typedef pair<int, int> ii;
 
 bool check_substring(int k, string str1, string str2){
     
-    REP(i,0,str1.size()){
-        if(str1.size()<=i+k){
+    for(int i=0;i<str1.size();i++){
+        if(i+k>str1.size()){
             return false;
         }
-        int temp = k;
-        int j=0;
-        bool ret = true;
-        REP(j,0,min(str2.size(), i+k)){
-            if(str1[i] != str2[j+i]){
-                ret = false;
+        for(int j=0;j<str2.size();j++){
+            if(j+k>str2.size()){
+                break;
             }
-        }    
-        if(ret){
-            return true;
+            int ret = true;
+            for(int temp=0;temp<k;temp++){
+                if(str1[i+k]!=str2[j+k]){
+                    ret = false;
+                    break;
+                }
+            }
+            if(ret){
+                return ret;
+            }
         }
-    }    
+    }  
 }
 
 int main(){
@@ -59,6 +63,7 @@ int main(){
             if(check_substring(i,str1, str2)){
                 status = true;
                 cout<<"YES"<<endl;
+                break;
             }
         }
         if(!status){
