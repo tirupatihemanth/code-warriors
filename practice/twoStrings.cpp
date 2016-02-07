@@ -31,6 +31,9 @@ typedef pair<int, int> ii;
 bool check_substring(int k, string str1, string str2){
     
     REP(i,0,str1.size()){
+        if(str1.size()<=i+k){
+            return false;
+        }
         int temp = k;
         int j=0;
         bool ret = true;
