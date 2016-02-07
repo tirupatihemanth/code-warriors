@@ -1,4 +1,4 @@
-#All test cases Passed 
+#All test cases Passed..
 
 n = input()
 a = input()
