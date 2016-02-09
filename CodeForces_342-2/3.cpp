@@ -56,53 +56,23 @@ typedef unsigned long long ull ;
 
 
 int main(){
-	std:: string s =""; std :: string s1  = "" ; 
-	char c ; 
-    while (true){
-        scanf("%c",&c); 
-        if (c == '\n')
-            break ; 
-        s.append(1,c) ; 
+	int n , k ; cin >> n >> k ; 
+    int pref = 0 ; int mid = n*n-(n-k) ; int en = n*n ; 
+    int sum = 0 ; int a = mid ; 
+    for (int i = 0 ; i < n ; i++){
+        sum += a-(n-k+1)*i ; 
     }
-    while (true){
-        scanf("%c",&c); 
-        if (c == '\n')
-            break ; 
-        s1.append(1,c) ; 
+    cout << sum << el ; 
+    for (int i = 0 ; i < n ; i++){
+        for (int j = 1 ; j <= k-1 ; j++){
+            pref++ ; cout << pref << sp ; 
+        }
+        for(int j = mid ; j <= en ; j++){
+            cout << j << sp ; 
+        }
+        cout << el ; 
+        mid -= (n-k+1) ; en -= (n-k+1) ; 
     }
-    //cout << s << el ;
-    //cout << s1 << el ; 
-	int cnt = 0 ; 
-	int found = -1  ; 
-	vi v ; 
-	while (true){
-		found = s.find(s1,found+1) ; 
-		if (found == std:: string :: npos){
-			break ; 
-		}
-		else{
-			v.pb(found) ; 
-		} 
-	}
-	int i = 0 ; 
-	int a = -1 ; 
-	while (i < v.size()){
-		a = v[i] ; 
-		cnt++ ; 
-		i++ ; 
-		while (v[i] < a+s1.size()){
-			i++ ;
-            if (i >= v.size())
-                break ;  
-		}
-	}
-
-
-
-	cout << cnt << el ; 
-
-	return 0 ; 
-
 }
 
 
